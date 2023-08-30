@@ -1,4 +1,6 @@
 import React from 'react';
+import { genresInDb } from '../constants'
+
 export default function LastMovieInDb() {
   return(
     <div class="col-lg-6 mb-4">						
@@ -9,85 +11,15 @@ export default function LastMovieInDb() {
       <div class="card-body">
         <div class="row">
           
-          <div class="col-lg-6 mb-4">
-            <div class="card bg-dark text-white shadow">
-              <div class="card-body">
-                Acción
+          { genresInDb.map( (genre) => (
+              <div class="col-lg-6 mb-4">
+                      <div class="card bg-dark text-white shadow">
+                            <div key={genre.id} class="card-body">
+                                {genre.title}
+                            </div>
+                      </div>
               </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mb-4">
-            <div class="card bg-dark text-white shadow">
-              <div class="card-body">
-                Animación
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mb-4">
-            <div class="card bg-dark text-white shadow">
-              <div class="card-body">
-                Aventura
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mb-4">
-            <div class="card bg-dark text-white shadow">
-              <div class="card-body">
-                Ciencia Ficción
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mb-4">
-            <div class="card bg-dark text-white shadow">
-              <div class="card-body">
-                Comedia
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mb-4">
-            <div class="card bg-dark text-white shadow">
-              <div class="card-body">
-                Documental
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mb-4">
-            <div class="card bg-dark text-white shadow">
-              <div class="card-body">
-                Drama
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mb-4">
-            <div class="card bg-dark text-white shadow">
-              <div class="card-body">
-                Fantasia
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mb-4">
-            <div class="card bg-dark text-white shadow">
-              <div class="card-body">
-                Infantiles
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-6 mb-4">
-            <div class="card bg-dark text-white shadow">
-              <div class="card-body">
-                Musical
-              </div>
-            </div>
-          </div>
+          ))}
 
         </div>
       </div>

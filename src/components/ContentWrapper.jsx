@@ -3,7 +3,7 @@ import { TopBar, ContentRowTop, Footer } from './index'
 
 export default function ContentWrapper() {
   return (
-    <div className='d-flex flex-column' id='content-wrapper'>
+    <div id="content-wrapper" class="d-flex flex-column">
         <div id='content'>
               <TopBar />
               <ContentRowTop />

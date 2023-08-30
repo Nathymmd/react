@@ -3,12 +3,10 @@ import { SideBar, ContentWrapper } from './index'
 
 export default function App() {
   return (
-        <div id="root">
-            <SideBar />
-                <div className='wrapper'>
+          <div id="wrapper">
+                    <SideBar />
                     <ContentWrapper />
-                </div>
-        </div>
+          </div>
   );
 }
 
