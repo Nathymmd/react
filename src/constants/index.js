@@ -1,3 +1,4 @@
+
 export const genresInDb = [
   {
     id: "accion",
@@ -55,3 +56,5 @@ export const sideBar = [
     title: "Tables"
   }
 ]
+
+

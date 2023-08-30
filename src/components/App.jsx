@@ -1,10 +1,12 @@
 import React from 'react'
 import { SideBar, ContentWrapper } from './index'
+import { sideBar } from '../constants';
+
 
 export default function App() {
   return (
           <div id="wrapper">
-                    <SideBar />
+                    <SideBar sideBar = {sideBar} />
                     <ContentWrapper />
           </div>
   );
