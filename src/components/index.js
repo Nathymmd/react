@@ -6,6 +6,7 @@ import ContentRowTop from "./ContentRowTop"
 import ContentRowMovies from "./ContentRowMovies"
 import LastMovieInDb from "./LastMovieInDb"
 import GenresInDb from "./GenresInDb"
+import Cards from "./Cards"
 
 export {
   TopBar,
@@ -15,5 +16,6 @@ export {
   ContentRowTop,
   ContentRowMovies,
   LastMovieInDb,
-  GenresInDb
+  GenresInDb,
+  Cards
 };
