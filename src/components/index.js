@@ -7,6 +7,9 @@ import ContentRowMovies from "./ContentRowMovies"
 import LastMovieInDb from "./LastMovieInDb"
 import GenresInDb from "./GenresInDb"
 import Cards from "./Cards"
+import MiComponente from "./MiComponente";
+import MoviesTable from "./MoviesTable/MoviesTable"
+import MoviesTableRows from "./MoviesTable/MoviesTableRows"
 
 export {
   TopBar,
@@ -17,5 +20,8 @@ export {
   ContentRowMovies,
   LastMovieInDb,
   GenresInDb,
-  Cards
+  Cards,
+  MiComponente,
+  MoviesTable,
+  MoviesTableRows,
 };

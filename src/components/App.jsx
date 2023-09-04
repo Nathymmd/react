@@ -1,5 +1,5 @@
 import React from 'react'
-import { SideBar, ContentWrapper } from './index'
+import { SideBar, ContentWrapper} from './index'
 import { sideBar } from '../constants';
 
 

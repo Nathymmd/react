@@ -78,3 +78,20 @@ export const cards = [
   },
 ]
 
+export const moviesInDb = [
+  {
+    title: "Billy Elliot",
+    length: 123,
+    rating: 5,
+    genre: "Drama",
+    awards: 2
+  },
+  {
+    title: "Alicia en el país de las maravillas",
+    length: 142,
+    rating: 4.8,
+    genre: "Accion",
+    awards: 3
+  }
+]
+

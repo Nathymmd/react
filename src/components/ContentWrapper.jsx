@@ -1,5 +1,5 @@
 import React from 'react';
-import { TopBar, ContentRowTop, Footer } from './index'
+import { TopBar, ContentRowTop, Footer, MoviesTable } from './index'
 
 export default function ContentWrapper() {
   return (
@@ -8,6 +8,7 @@ export default function ContentWrapper() {
               <TopBar />
               <ContentRowTop />
         </div>
+              <MoviesTable />
               <Footer /> 
     </div>
   );
