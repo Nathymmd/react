@@ -7,8 +7,8 @@ export default function ContentWrapper() {
         <div id='content'>
               <TopBar />
               <ContentRowTop />
-        </div>
               <MoviesTable />
+        </div>
               <Footer /> 
     </div>
   );
