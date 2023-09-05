@@ -11,16 +11,20 @@ class MoviesTableRows extends Component {
       }
   }
 
-  componentDidMount () {
-    fetch('/api/movies')
-    .then( respuesta => {
-      return respuesta.json()
-    })
-    .then( data => {
-      this.setState({moviesInDb: data.data})
-    })
-    .catch(e => {console.log(e)})
+  async componentDidMount() {
+    try {
+      const apiMovies = await fetch('/api/movies')
+      const dataMovies = await apiMovies.json();
+
+      this.setState({
+        moviesInDb: dataMovies.data
+      })
+
+    } catch (e) {
+      console.error(e)
+    }
   }
+
 
   render() {
     return (

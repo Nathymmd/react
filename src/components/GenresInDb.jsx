@@ -8,16 +8,20 @@ class GenresInDb extends Component {
       }
   }
 
-  componentDidMount () {
-    fetch('/api/genres')
-    .then( respuesta => {
-      return respuesta.json()
-    })
-    .then( data => {
-      this.setState({genresInDb: data.data})
-    })
-    .catch( e => {console.log(e)} )
+  async componentDidMount() {
+    try {
+      const apiGenres = await fetch('/api/genres')
+      const dataGenres = await apiGenres.json();
+
+      this.setState({
+        genresInDb: dataGenres.data
+      })
+
+    } catch (e) {
+      console.error(e)
+    }
   }
+
 
   render() {
     return (
