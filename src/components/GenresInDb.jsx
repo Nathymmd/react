@@ -16,7 +16,7 @@ class GenresInDb extends Component {
     .then( data => {
       this.setState({genresInDb: data.data})
     })
-    .catch(e => {console.log(e) })
+    .catch( e => {console.log(e)} )
   }
 
   render() {

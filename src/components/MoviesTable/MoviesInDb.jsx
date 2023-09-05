@@ -3,7 +3,6 @@ import './moviesTable.css'
 import PropTypes from 'prop-types'
 
 export default function MoviesInDb(props) {
-  console.log(props)
   return (
         <ul className='moviesTableGridRows'>
             <li>{props.title}</li> 
