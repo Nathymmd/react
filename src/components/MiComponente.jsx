@@ -8,6 +8,11 @@ class MiComponente extends Component {
     }
   }
 
+  componentDidMount() {
+    // ACA VA EL FETCH
+  }
+
+
   postSubscribe() {
     this.setState({
       message: 'Gracias por suscribirte ;)'

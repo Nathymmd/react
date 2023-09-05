@@ -3,12 +3,13 @@ import './moviesTable.css'
 import PropTypes from 'prop-types'
 
 export default function MoviesInDb(props) {
+  console.log(props)
   return (
         <ul className='moviesTableGridRows'>
             <li>{props.title}</li> 
             <li>{props.length}</li> 
             <li>{props.rating}</li> 
-            <li>{props.genre}</li> 
+            <li>{props.genre ? props.genre.name : 'Sin Género'}</li> 
             <li>{props.awards}</li> 
         </ul>
   );
