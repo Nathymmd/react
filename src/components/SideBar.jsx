@@ -1,6 +1,11 @@
 import React from 'react';
 import image from '../assets/images/logo-DH.png'
 import PropTypes from 'prop-types'
+import { ContentWrapper } from './index'
+import { Link, Route, Switch } from 'react-router-dom'
+
+
+
 
 export default function SideBar(props) {
   return (
@@ -33,6 +38,13 @@ export default function SideBar(props) {
             )}
             <hr className="sidebar-divider d-none d-md-block" />
       </ul>
+
+
+      <Switch>
+            <Route path ='/' exact >
+                  <ContentWrapper />               
+            </Route>
+      </Switch>
     </>
   );
 }

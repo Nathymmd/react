@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Genre } from './index'
 class GenresInDb extends Component {
   constructor(props){
     super(props);
@@ -30,16 +30,10 @@ class GenresInDb extends Component {
                   <div className="card-header py-3">
                     <h5 className="m-0 font-weight-bold text-gray-800">Genres in Data Base</h5>
                   </div>
-                  <div className="card-body">
-                    <div className="row">
-                      { this.state.genresInDb.map( (genre) => (
-                          <div key={genre.id} className="col-lg-6 mb-4">
-                                  <div className="card bg-dark text-white shadow">
-                                        <div className="card-body">
-                                            {genre.name}
-                                        </div>
-                                  </div>
-                          </div>
+                  <div className="card-body fondoCaja">
+                    <div className="row ">
+                      { this.state.genresInDb.map( (genre, i) => (
+                          <Genre key = {genre + i} {...genre}/>
                       ))}
                     </div>
                   </div>

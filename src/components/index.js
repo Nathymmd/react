@@ -6,8 +6,8 @@ import ContentRowTop from "./ContentRowTop"
 import ContentRowMovies from "./ContentRowMovies"
 import LastMovieInDb from "./LastMovieInDb"
 import GenresInDb from "./GenresInDb"
+import Genre from "./Genre";
 import Cards from "./Cards"
-import MiComponente from "./MiComponente";
 
 import MoviesTable from "./MoviesTable/MoviesTable"
 import MoviesTableRows from "./MoviesTable/MoviesTableRows"
@@ -23,8 +23,8 @@ export {
   ContentRowMovies,
   LastMovieInDb,
   GenresInDb,
+  Genre,
   Cards,
-  MiComponente,
   
   MoviesTable,
   MoviesTableRows,
