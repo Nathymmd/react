@@ -2,15 +2,23 @@
 
 export const sideBar = [
   {
-    id: "pages",
-    title: "Pages"
+    id: "genres",
+    title: "Genres",
+    route: "/genres"
   },
   {
-    id: "charts",
-    title: "Charts"
+    id: "lastMovie",
+    title: "Last Movie",
+    route: "/lastMovie"
   },
   {
-    id: "tables",
-    title: "Tables"
-  }
+    id: "dataMovies",
+    title: "Stats",
+    route: "/stats" 
+  },
+  {
+    id: "dataMovies",
+    title: "Table",
+    route: "/table"
+  },
 ]

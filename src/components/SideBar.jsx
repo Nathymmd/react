@@ -1,8 +1,8 @@
 import React from 'react';
 import image from '../assets/images/logo-DH.png'
 import PropTypes from 'prop-types'
-import { ContentWrapper } from './index'
-import { Link, Route, Switch } from 'react-router-dom'
+import { ContentWrapper, GenresInDb, LastMovieInDb, ContentRowMovies, MoviesTable,NotFound } from './index'
+import { Link, Route, Routes } from 'react-router-dom'
 
 
 
@@ -11,17 +11,18 @@ export default function SideBar(props) {
   return (
     <>  
       <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
-                  <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-                        <div className="sidebar-brand-icon">
-                              <img className="w-100" src={image} alt="Digital House" />
-                        </div>
-                  </a>
+                        <Link exact className="sidebar-brand d-flex align-items-center justify-content-center" to="/">
+                              <div className="sidebar-brand-icon">
+                                    <img className="w-100" src={image} alt="Digital House" />
+                              </div>
+                        </Link>
 
             <hr className="sidebar-divider my-0" />
                   <li className="nav-item active">
-                        <a className="nav-link" href="/">
+                        <Link className="nav-link" to="/">
                               <i className="fas fa-fw fa-tachometer-alt"></i>
-                                    <span>Dashboard - DH movies</span></a>
+                                    <span>Dashboard - DH movies</span>
+                        </Link>
                   </li>
             <hr className="sidebar-divider" />
 
@@ -30,9 +31,9 @@ export default function SideBar(props) {
             { props.sideBar.map( (nav) => 
                   nav.title ? (
                         <li key={nav.id} className="nav-item">
-                                    <a className="nav-link collapsed" href="/">
+                                    <Link className="nav-link collapsed" to={nav.route}>
                                     <i className="fas fa-fw fa-folder"></i>
-                                    <span>{nav.title}</span></a>
+                                    <span>{nav.title}</span></Link>
                         </li>
                   ): null
             )}
@@ -40,11 +41,14 @@ export default function SideBar(props) {
       </ul>
 
 
-      <Switch>
-            <Route path ='/' exact >
-                  <ContentWrapper />               
-            </Route>
-      </Switch>
+      <Routes>
+            <Route path ='/' exact  Component={ContentWrapper} />
+            <Route path ='/genres' exact  Component={GenresInDb} />
+            <Route path ='/lastMovie' exact  Component={LastMovieInDb} />
+            <Route path ='/stats' exact  Component={ContentRowMovies} />
+            <Route path ='/table' exact  Component={MoviesTable} />
+            <Route path ='/404' exact  Component={NotFound} />                          
+      </Routes>
     </>
   );
 }

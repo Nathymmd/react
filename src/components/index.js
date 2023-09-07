@@ -14,6 +14,8 @@ import MoviesTableRows from "./MoviesTable/MoviesTableRows"
 import MoviesTableGridHeaderFooter from "./MoviesTable/MoviesTableHeaderFooter";
 import MoviesInDb from "./MoviesTable/MoviesInDb"
 
+import NotFound from "./NotFound";
+
 export {
   TopBar,
   SideBar,
@@ -29,5 +31,7 @@ export {
   MoviesTable,
   MoviesTableRows,
   MoviesTableGridHeaderFooter,
-  MoviesInDb
+  MoviesInDb,
+
+  NotFound
 };
