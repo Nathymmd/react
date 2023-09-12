@@ -21,4 +21,9 @@ export const sideBar = [
     title: "Table",
     route: "/table"
   },
+  {
+    id: "searchMovies",
+    title: "Search",
+    route: "/searchmovies"
+  },
 ]

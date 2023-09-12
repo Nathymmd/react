@@ -1,7 +1,7 @@
 import React from 'react';
 import image from '../assets/images/logo-DH.png'
 import PropTypes from 'prop-types'
-import { ContentWrapper, GenresInDb, LastMovieInDb, ContentRowMovies, MoviesTable,NotFound } from './index'
+import { ContentWrapper, GenresInDb, LastMovieInDb, ContentRowMovies, MoviesTable , SearchMovies, NotFound } from './index'
 import { Link, Route, Routes } from 'react-router-dom'
 
 
@@ -47,8 +47,30 @@ export default function SideBar(props) {
             <Route path ='/lastMovie' exact  Component={LastMovieInDb} />
             <Route path ='/stats' exact  Component={ContentRowMovies} />
             <Route path ='/table' exact  Component={MoviesTable} />
-            <Route path ='/404' exact  Component={NotFound} />                          
+            <Route path ='/searchmovies' exact  Component={SearchMovies} />
+            <Route Component={NotFound} />                          
       </Routes>
+
+            {/* 
+            <Switch>
+                <Route exact path="/">
+                    <ContentWrapper />
+                </Route>
+                <Route path="/GenresInDb">
+                    <GenresInDb />
+                </Route>
+                <Route path="/LastMovieInDb">
+                    <LastMovieInDb />
+                </Route>
+                <Route path="/ContentRowMovies">
+                    <ContentRowMovies />
+                </Route>
+                <Route path="/searchmovies">
+                    <SearchMovies />
+                </Route>
+                <Route component={NotFound} />
+            </Switch> 
+            */}
     </>
   );
 }

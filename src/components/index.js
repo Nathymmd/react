@@ -13,6 +13,7 @@ import MoviesTable from "./MoviesTable/MoviesTable"
 import MoviesTableRows from "./MoviesTable/MoviesTableRows"
 import MoviesTableGridHeaderFooter from "./MoviesTable/MoviesTableHeaderFooter";
 import MoviesInDb from "./MoviesTable/MoviesInDb"
+import SearchMovies from "./SearchMovies";
 
 import NotFound from "./NotFound";
 
@@ -32,6 +33,7 @@ export {
   MoviesTableRows,
   MoviesTableGridHeaderFooter,
   MoviesInDb,
+  SearchMovies,
 
   NotFound
 };
