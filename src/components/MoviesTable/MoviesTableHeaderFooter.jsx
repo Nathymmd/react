@@ -1,14 +1,12 @@
 import React from 'react'
 import './moviesTable.css'
 
-export default function moviesTableGridHeaderFooter() {
+export default function moviesTableGridHeaderFooter({header}) {
   return (
         <ul className='moviesTableGridHeaderFooter'>
-          <li>Títulos</li> 
-          <li>Duración</li> 
-          <li>Rating</li> 
-          <li>Género</li> 
-          <li>Premios</li> 
+          {header.map((col, i) => {
+            return <li key={col + i}>{col}</li>
+          })}
         </ul>
   );
 }

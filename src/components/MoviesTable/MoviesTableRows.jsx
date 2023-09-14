@@ -1,37 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './moviesTable.css'
 import { MoviesInDb } from '../index'
-// import { moviesInDb } from '../../constants';
 
-class MoviesTableRows extends Component {
-  constructor(props){
-    super(props);
-      this.state = {
-        moviesInDb: []
-      }
-  }
+export default function MoviesTableRows({data, header}) {
+  
 
-  async componentDidMount() {
-    try {
-      const apiMovies = await fetch('/api/movies')
-      const dataMovies = await apiMovies.json();
-
-      this.setState({
-        moviesInDb: dataMovies.data
-      })
-
-    } catch (e) {
-      console.error(e)
-    }
-  }
-
-
-  render() {
-    return (
-      this.state.moviesInDb.map( (movie, i) => {
-        return <MoviesInDb key={movie + i} {...movie} />})
-    )
-  }
+  return (
+    data.map( (row, i) => {
+      return <MoviesInDb key={row + i} data = {{...row}} header = {header} />})
+  )
 }
 
-export default MoviesTableRows

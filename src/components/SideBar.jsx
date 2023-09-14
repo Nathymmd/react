@@ -4,10 +4,45 @@ import PropTypes from 'prop-types'
 import { ContentWrapper, GenresInDb, LastMovieInDb, ContentRowMovies, MoviesTable , SearchMovies, NotFound } from './index'
 import { Link, Route, Routes } from 'react-router-dom'
 
+import { useState, useEffect } from 'react'
+
 
 
 
 export default function SideBar(props) {
+
+      const [userInfo, setUserInfo] = useState({
+            count: 0,
+            users: []
+      });
+      const [productInfo, setProductInfo] = useState({
+            count: 0,
+            countByCategory: {},
+            products: []
+      });
+
+      async function fetchData(endpoint, setState) {
+            try {
+                  const apiFetch = await fetch(endpoint)
+                  const data = await apiFetch.json()
+
+                  setState(data.data)
+
+
+            } catch (e) {
+                  console.error(e)
+            }
+      }
+
+      useEffect( () => {
+            async function data() {
+            await Promise.all([fetchData('/api/users', setUserInfo), fetchData('/api/products', setProductInfo)])
+            }
+            data()
+
+      }, [])
+
+
   return (
     <>  
       <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -41,36 +76,30 @@ export default function SideBar(props) {
       </ul>
 
 
+
+      
       <Routes>
-            <Route path ='/' exact  Component={ContentWrapper} />
-            <Route path ='/genres' exact  Component={GenresInDb} />
-            <Route path ='/lastMovie' exact  Component={LastMovieInDb} />
-            <Route path ='/stats' exact  Component={ContentRowMovies} />
-            <Route path ='/table' exact  Component={MoviesTable} />
-            <Route path ='/searchmovies' exact  Component={SearchMovies} />
-            <Route Component={NotFound} />                          
+            <Route path ='/'  exact element={<ContentWrapper 
+                                                            productInfo = {productInfo} 
+                                                            userInfo = {userInfo}/>} />
+
+            <Route path ='/genres' exact  element={<GenresInDb 
+                                                            categories = {Object.keys(productInfo.countByCategory)}/>} />
+                                                            
+            <Route path ='/lastMovie' exact   element={LastMovieInDb} />
+            <Route path ='/stats' exact   element={ContentRowMovies} />
+
+            <Route path ='/tableUser' exact  element={<MoviesTable 
+                                                            data = {userInfo.users} 
+                                                            header = {['id', 'name', 'email', 'detail']}/>} />
+            <Route path ='/tableProduct' exact   element={<MoviesTable 
+                                                            data = {productInfo.products} 
+                                                            header = {['id', 'name', 'description', 'detail', 'category']}/>} />
+
+            <Route path ='/searchmovies' exact  element={SearchMovies} />
+            <Route element={NotFound} />                          
       </Routes>
 
-            {/* 
-            <Switch>
-                <Route exact path="/">
-                    <ContentWrapper />
-                </Route>
-                <Route path="/GenresInDb">
-                    <GenresInDb />
-                </Route>
-                <Route path="/LastMovieInDb">
-                    <LastMovieInDb />
-                </Route>
-                <Route path="/ContentRowMovies">
-                    <ContentRowMovies />
-                </Route>
-                <Route path="/searchmovies">
-                    <SearchMovies />
-                </Route>
-                <Route component={NotFound} />
-            </Switch> 
-            */}
     </>
   );
 }
