@@ -1,7 +1,7 @@
 import React from 'react';
 import image from '../assets/images/logo-DH.png'
 import PropTypes from 'prop-types'
-import { ContentWrapper, GenresInDb, LastMovieInDb, ContentRowMovies, MoviesTable , SearchMovies, NotFound } from './index'
+import { ContentWrapper, GenresInDb, LastProductInDb, ContentRowMovies, MoviesTable , SearchMovies, NotFound } from './index'
 import { Link, Route, Routes } from 'react-router-dom'
 
 import { useState, useEffect } from 'react'
@@ -42,6 +42,7 @@ export default function SideBar(props) {
 
       }, [])
 
+      console.log(userInfo)
 
   return (
     <>  
@@ -79,24 +80,48 @@ export default function SideBar(props) {
 
       
       <Routes>
-            <Route path ='/'  exact element={<ContentWrapper 
-                                                            productInfo = {productInfo} 
-                                                            userInfo = {userInfo}/>} />
+            <Route path ='/' exact element={
+                  <ContentWrapper 
+                        productInfo = {productInfo} 
+                        userInfo = {userInfo}
+                  />} 
+            />
 
-            <Route path ='/genres' exact  element={<GenresInDb 
-                                                            categories = {Object.keys(productInfo.countByCategory)}/>} />
+            <Route path ='/genres' exact element={
+                  <GenresInDb 
+                        categories = {Object.keys(productInfo.countByCategory)}
+                  />} 
+            />
                                                             
-            <Route path ='/lastMovie' exact   element={LastMovieInDb} />
-            <Route path ='/stats' exact   element={ContentRowMovies} />
+            <Route path ='/lastProduct' exact element={
+                  <LastProductInDb
+                        data = {productInfo.lastProduct}
 
-            <Route path ='/tableUser' exact  element={<MoviesTable 
-                                                            data = {userInfo.users} 
-                                                            header = {['id', 'name', 'email', 'detail']}/>} />
-            <Route path ='/tableProduct' exact   element={<MoviesTable 
-                                                            data = {productInfo.products} 
-                                                            header = {['id', 'name', 'description', 'detail', 'category']}/>} />
+                  />}
+            />
 
-            <Route path ='/searchmovies' exact  element={SearchMovies} />
+            <Route path ='/stats' exact element={
+                  <ContentRowMovies 
+                        usersCount = {userInfo.count} 
+                        productInfo = {productInfo}
+                  />} 
+            />
+
+            <Route path ='/tableUsers' exact element={
+                  <MoviesTable 
+                        data = {userInfo.users} 
+                        header = {['id', 'name', 'email', 'detail']}
+                  />} 
+            />
+
+            <Route path ='/tableProducts' exact element={
+                  <MoviesTable 
+                        data = {productInfo.products} 
+                        header = {['id', 'name', 'description', 'detail', 'category']}
+                  />}
+            />
+
+            <Route path ='/searchmovies' exact element={SearchMovies} />
             <Route element={NotFound} />                          
       </Routes>
 

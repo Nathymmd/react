@@ -4,7 +4,7 @@ import Footer from "./Footer"
 import ContentWrapper from "./ContentWrapper"
 import ContentRowTop from "./ContentRowTop"
 import ContentRowMovies from "./ContentRowMovies"
-import LastMovieInDb from "./LastMovieInDb"
+import LastProductInDb from "./LastProductInDb"
 import GenresInDb from "./GenresInDb"
 import Genre from "./Genre";
 import Cards from "./Cards"
@@ -24,7 +24,7 @@ export {
   ContentWrapper,
   ContentRowTop,
   ContentRowMovies,
-  LastMovieInDb,
+  LastProductInDb,
   GenresInDb,
   Genre,
   Cards,

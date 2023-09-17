@@ -6,11 +6,22 @@ export default function ContentWrapper({userInfo, productInfo}) {
     <div id="content-wrapper" className="d-flex flex-column">
         <div id='content'>
               <TopBar />
-              <ContentRowTop categories = {Object.keys(productInfo.countByCategory)}/>
-              <MoviesTable data = {productInfo.products} 
-                           header = {['id', 'name', 'description', 'detail', 'category']}/>
-              <MoviesTable data = {userInfo.users} 
-                           header = {['id', 'name', 'email', 'detail']}/>
+              
+              <ContentRowTop 
+                categories = {Object.keys(productInfo.countByCategory)} 
+                usersCount = {userInfo.count} 
+                productInfo = {productInfo}
+              />
+
+              <MoviesTable 
+                data = {productInfo.products} 
+                header = {['id', 'name', 'description', 'detail', 'category']}
+              />
+              
+              <MoviesTable 
+                data = {userInfo.users} 
+                header = {['id', 'name', 'email', 'detail']}
+              />
         </div>
               <Footer /> 
     </div>

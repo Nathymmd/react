@@ -7,9 +7,9 @@ export const sideBar = [
     route: "/genres"
   },
   {
-    id: "lastMovie",
-    title: "Last Movie",
-    route: "/lastMovie"
+    id: "lastProduct",
+    title: "Last Product",
+    route: "/lastProduct"
   },
   {
     id: "dataMovies",
@@ -17,9 +17,14 @@ export const sideBar = [
     route: "/stats" 
   },
   {
-    id: "dataMovies",
-    title: "Table",
-    route: "/table"
+    id: "dataProducts",
+    title: "Products",
+    route: "/tableProducts"
+  },
+  {
+    id: "dataUsers",
+    title: "Users",
+    route: "/tableUsers"
   },
   {
     id: "searchMovies",
