@@ -1,9 +1,9 @@
 import React from 'react'
-import './moviesTable.css'
+import './table.css'
 
-export default function moviesTableGridHeaderFooter({header}) {
+export default function HeaderFooter({header}) {
   return (
-        <ul className='moviesTableGridHeaderFooter'>
+        <ul className='headerFooter'>
           {header.map((col, i) => {
             return <li key={col + i}>{col}</li>
           })}

@@ -15,7 +15,7 @@ export default function ContentRowTop({categories, usersCount, productInfo}) {
                 
           <div className="row">
                   <LastProductInDb 
-                        data = {productInfo.lastProduct} 
+                        lastProduct = {productInfo.lastProduct} 
                   />
                   <GenresInDb 
                         categories = {categories}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TopBar, ContentRowTop, Footer, MoviesTable } from './index'
+import { TopBar, ContentRowTop, Footer, TableGrid } from './index'
 
 export default function ContentWrapper({userInfo, productInfo}) {
   return (
@@ -13,12 +13,12 @@ export default function ContentWrapper({userInfo, productInfo}) {
                 productInfo = {productInfo}
               />
 
-              <MoviesTable 
+              <TableGrid 
                 data = {productInfo.products} 
                 header = {['id', 'name', 'description', 'detail', 'category']}
               />
               
-              <MoviesTable 
+              <TableGrid 
                 data = {userInfo.users} 
                 header = {['id', 'name', 'email', 'detail']}
               />

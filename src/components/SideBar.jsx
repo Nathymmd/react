@@ -1,7 +1,7 @@
 import React from 'react';
-import image from '../assets/images/logo-DH.png'
+import image from '../assets/images/logo-impactx.png'
 import PropTypes from 'prop-types'
-import { ContentWrapper, GenresInDb, LastProductInDb, ContentRowMovies, MoviesTable , SearchMovies, NotFound } from './index'
+import { ContentWrapper, GenresInDb, LastProductInDb, ContentRowMovies, TableGrid , SearchMovies, NotFound } from './index'
 import { Link, Route, Routes } from 'react-router-dom'
 
 import { useState, useEffect } from 'react'
@@ -48,8 +48,8 @@ export default function SideBar(props) {
     <>  
       <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
                         <Link exact className="sidebar-brand d-flex align-items-center justify-content-center" to="/">
-                              <div className="sidebar-brand-icon">
-                                    <img className="w-100" src={image} alt="Digital House" />
+                              <div style={{padding:"1.3rem"}}>
+                                    <img className="w-100" src={image} alt="Impact X" />
                               </div>
                         </Link>
 
@@ -57,7 +57,7 @@ export default function SideBar(props) {
                   <li className="nav-item active">
                         <Link className="nav-link" to="/">
                               <i className="fas fa-fw fa-tachometer-alt"></i>
-                                    <span>Dashboard - DH movies</span>
+                                    <span>Dashboard - Impact X</span>
                         </Link>
                   </li>
             <hr className="sidebar-divider" />
@@ -95,7 +95,7 @@ export default function SideBar(props) {
                                                             
             <Route path ='/lastProduct' exact element={
                   <LastProductInDb
-                        data = {productInfo.lastProduct}
+                        lastProduct = {productInfo.lastProduct}
 
                   />}
             />
@@ -108,14 +108,14 @@ export default function SideBar(props) {
             />
 
             <Route path ='/tableUsers' exact element={
-                  <MoviesTable 
+                  <TableGrid 
                         data = {userInfo.users} 
                         header = {['id', 'name', 'email', 'detail']}
                   />} 
             />
 
             <Route path ='/tableProducts' exact element={
-                  <MoviesTable 
+                  <TableGrid 
                         data = {productInfo.products} 
                         header = {['id', 'name', 'description', 'detail', 'category']}
                   />}

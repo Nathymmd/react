@@ -1,8 +1,9 @@
 import React from 'react';
 import image from '../assets/images/mandalorian.jpg';
 
-export default function LastProductInDb({data}) {
-      console.log(data)
+
+export default function LastProductInDb({lastProduct}) {
+      console.log(lastProduct)
   return(
 
         <div className="col-lg-6 mb-4">
@@ -14,10 +15,8 @@ export default function LastProductInDb({data}) {
                             <div className="text-center">
                               <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "40rem" }} src={image} alt=" Star Wars - Mandalorian " />
                             </div>
-                            <div>
-                              <p>{data.name}</p>
-                              <p>{data.description}</p>
-                            </div>
+                              <p></p>
+                              <p></p>
                               <a className="btn btn-danger" href="/">View movie detail</a>
                   </div>
             </div>
