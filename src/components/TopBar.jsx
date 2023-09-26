@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/images/jordan-walke.png'
+import image from '../assets/images/hulk.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faBell } from '@fortawesome/free-solid-svg-icons'
 
@@ -33,7 +33,7 @@ export default function TopBar() {
                   <div className="topbar-divider d-none d-sm-block"></div>
                   <li className="nav-item dropdown no-arrow">
                           <a className="nav-link dropdown-toggle" href="/" id="userDropdown">
-                                  <span className="mr-2 d-none d-lg-inline text-gray-600 small">Jordan Walke</span>
+                                  <span className="mr-2 d-none d-lg-inline text-gray-600 small">The Real Hulk</span>
                                           <img className="img-profile rounded-circle" src={image} alt="Jordan Walke - Creador de React" width="60" />
                           </a>
                   </li>

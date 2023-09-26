@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContentRowMovies, LastProductInDb, GenresInDb} from './index'
+import { ContentRowMovies, LastProductInDb, Categories} from './index'
 
 export default function ContentRowTop({categories, usersCount, productInfo}) {
 
@@ -17,7 +17,7 @@ export default function ContentRowTop({categories, usersCount, productInfo}) {
                   <LastProductInDb 
                         lastProduct = {productInfo.lastProduct} 
                   />
-                  <GenresInDb 
+                  <Categories 
                         categories = {categories}
                   />
           </div>

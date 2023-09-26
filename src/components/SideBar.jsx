@@ -1,7 +1,7 @@
 import React from 'react';
 import image from '../assets/images/logo-impactx.png'
 import PropTypes from 'prop-types'
-import { ContentWrapper, GenresInDb, LastProductInDb, ContentRowMovies, TableGrid , SearchMovies, NotFound } from './index'
+import { ContentWrapper, Categories, LastProductInDb, ContentRowMovies, TableGrid , EndGame, NotFound } from './index'
 import { Link, Route, Routes } from 'react-router-dom'
 
 import { useState, useEffect } from 'react'
@@ -88,7 +88,7 @@ export default function SideBar(props) {
             />
 
             <Route path ='/genres' exact element={
-                  <GenresInDb 
+                  <Categories 
                         categories = {Object.keys(productInfo.countByCategory)}
                   />} 
             />
@@ -121,7 +121,9 @@ export default function SideBar(props) {
                   />}
             />
 
-            <Route path ='/searchmovies' exact element={SearchMovies} />
+            <Route path ='/endgame' exact element={
+                  <EndGame />
+            } />
             <Route element={NotFound} />                          
       </Routes>
 

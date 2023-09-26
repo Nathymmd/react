@@ -5,7 +5,7 @@ import ContentWrapper from "./ContentWrapper"
 import ContentRowTop from "./ContentRowTop"
 import ContentRowMovies from "./ContentRowMovies"
 import LastProductInDb from "./LastProductInDb"
-import GenresInDb from "./GenresInDb"
+import Categories from "./Categories"
 import Genre from "./Genre";
 import Cards from "./Cards"
 
@@ -13,7 +13,7 @@ import TableGrid from "./Table/TableGrid"
 import TableRows from "./Table/TableRows"
 import HeaderFooter from "./Table/HeaderFooter";
 import TableData from "./Table/TableData"
-import SearchMovies from "./SearchMovies";
+import EndGame from "./EndGame";
 
 import NotFound from "./NotFound";
 
@@ -25,7 +25,7 @@ export {
   ContentRowTop,
   ContentRowMovies,
   LastProductInDb,
-  GenresInDb,
+  Categories,
   Genre,
   Cards,
   
@@ -33,7 +33,7 @@ export {
   TableRows,
   HeaderFooter,
   TableData,
-  SearchMovies,
+  EndGame,
 
   NotFound
 };

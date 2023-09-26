@@ -4,22 +4,22 @@ import { Cards } from './index'
 
 export default function ContentRowMovies({usersCount, productInfo}) {
   return (
-      <div className='row'>
+      <div className='row' style={{alignItems: "center", width: "100%"}}>
           <Cards 
-            title = "Users total"
+            title = "Total Users"
             quantity = {usersCount}
             color = "primary"
-            icon = "fa-film" />
+            icon = "fa-user" />
           <Cards 
-            title = "Products total"
+            title = "Total Products"
             quantity = {productInfo.countByCategory.Producto}
             color = "success"
             icon = "fa-award" />
           <Cards 
-            title = "Services total"
+            title = "Total Services"
             quantity = {productInfo.countByCategory.Servicio}
             color = "warning"
-            icon = "fa-user" />
+            icon = "fa-film" />
       </div>
   )
 }
